@@ -73,15 +73,15 @@ const PracticeTab = () => {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen flex items-center justify-center px-4">
-      <div className="max-w-md w-full bg-white shadow-lg rounded-lg p-6">
-        <h2 className="text-3xl font-bold text-center text-indigo-600 mb-4">
+    <div className="bg-gray-50 dark:bg-gray-900 min-h-screen flex items-center justify-center px-4">
+      <div className="max-w-md w-full bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6">
+        <h2 className="text-3xl font-bold text-center text-indigo-600 dark:text-indigo-400 mb-4">
           Practice Vocabulary
         </h2>
         {currentWord ? (
           <>
             <div className="text-center mb-6">
-              <p className="text-lg font-medium text-gray-700">
+              <p className="text-lg font-medium text-gray-700 dark:text-gray-300">
                 <strong>Word:</strong> {currentWord.word}
               </p>
             </div>
@@ -90,11 +90,11 @@ const PracticeTab = () => {
               value={userInput}
               onChange={(e) => setUserInput(e.target.value)}
               placeholder="Enter the definition"
-              className="w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-indigo-600 transition-all outline-none mb-4"
+              className="w-full border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-indigo-600 transition-all outline-none mb-4 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
             />
             <button
               onClick={handleCheck}
-              className="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-all"
+              className="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-all dark:bg-indigo-700 dark:hover:bg-indigo-600"
             >
               Submit
             </button>
@@ -108,7 +108,7 @@ const PracticeTab = () => {
               </p>
             )}
             <div className="mt-6">
-              <div className="w-full bg-gray-200 rounded-full h-4">
+              <div className="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-600">
                 <div
                   className="bg-indigo-600 h-4 rounded-full transition-all"
                   style={{
@@ -116,15 +116,17 @@ const PracticeTab = () => {
                   }}
                 ></div>
               </div>
-              <p className="text-sm text-gray-500 mt-2 text-center">
+              <p className="text-sm text-gray-500 mt-2 text-center dark:text-gray-400">
                 {totalRoundWords - progress} words left in this round
               </p>
             </div>
           </>
         ) : (
           <div className="text-center">
-            <p className="text-lg text-gray-700">No words left to practice!</p>
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="text-lg text-gray-700 dark:text-gray-300">
+              No words left to practice!
+            </p>
+            <p className="text-sm text-gray-500 mt-2 dark:text-gray-400">
               Keep learning and improving your vocabulary.
             </p>
           </div>
