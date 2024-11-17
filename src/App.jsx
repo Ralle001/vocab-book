@@ -36,11 +36,7 @@ const App = () => {
               />
             </svg>
           </button>
-          <nav
-            className={`${
-              menuOpen ? 'block' : 'hidden'
-            } w-full md:w-auto mt-4 md:mt-0`}
-          >
+          <nav className={`w-full md:w-auto mt-4 md:mt-0`}>
             <ul className="flex flex-col md:flex-row md:space-x-4">
               <li>
                 <button
