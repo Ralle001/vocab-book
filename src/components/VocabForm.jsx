@@ -1,12 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { VocabContext } from '../context/VocabProvider'; // Import your context
 
 const VocabForm = () => {
+  const { addWord } = useContext(VocabContext); // Access the addWord function from context
   const [word, setWord] = useState('');
   const [definition, setDefinition] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add the word to your vocab list
+    console.log('Form submitted'); // Debug log
+    console.log('Word:', word); // Debug log
+    console.log('Definition:', definition); // Debug log
+
+    if (!word || !definition) {
+      alert('Please fill in both fields.');
+      return;
+    }
+
+    addWord(word, definition, 'New'); // Default tag for new words
+    setWord(''); // Reset the input fields
+    setDefinition('');
   };
 
   return (
